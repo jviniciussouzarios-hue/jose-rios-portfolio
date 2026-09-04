@@ -55,8 +55,8 @@ const techStack = [
     ),
   },
   {
-    name: 'MySQL',
-    category: 'Relational DB',
+    name: 'SQL & MySQL',
+    category: 'Relational DB & Queries',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 3C7 3 3 5.5 3 8.5v7C3 18.5 7 21 12 21s9-2.5 9-5.5v-7C21 5.5 17 3 12 3zm0 2c4.4 0 7 2 7 3.5S16.4 12 12 12s-7-2-7-3.5S7.6 5 12 5z" fill="#4479A1" />
