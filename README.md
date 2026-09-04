@@ -2,7 +2,7 @@
 
 > Portfólio reativo moderno, minimalista e de alta performance desenvolvido com **React 18 + Vite**, **Framer Motion**, **GSAP ScrollTrigger**, **Lenis Smooth Scroll** e **TailwindCSS**. Inspirado na estética visual e interações da agência **UNIFEX**, com transições dinâmicas entre temas claro e escuro e suporte bilíngue nativo.
 
-[![Deploy to GitHub Pages](https://github.com/JViniciusRios/jose-rios-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/JViniciusRios/jose-rios-portfolio/actions)
+[![Deploy to GitHub Pages](https://github.com/jviniciussouzarios-hue/jose-rios-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/jviniciussouzarios-hue/jose-rios-portfolio/actions)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
