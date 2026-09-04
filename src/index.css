@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   THEME CSS VARIABLES
+   ═══════════════════════════════════════════════════ */
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #0A0A0A;
+  --text-primary: #0A0A0A;
+  --text-secondary: #F5F5F5;
+  --accent-lime: #D6FF3F;
+  --accent-red: #E23B2E;
+  --gray-muted: #8C8C8C;
+  --card-border: #1F1F1F;
+  --transition-theme: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #F5F5F5;
+  --text-secondary: #0A0A0A;
+}
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL RESET & BASE
+   ═══════════════════════════════════════════════════ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+a, button {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  a, button {
+    cursor: pointer;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════ */
+.font-display {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.text-outline {
+  -webkit-text-stroke: 2px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-outline-white {
+  -webkit-text-stroke: 2px #F5F5F5;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-outline-dark {
+  -webkit-text-stroke: 2px #0A0A0A;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════
+   LOADING SCREEN
+   ═══════════════════════════════════════════════════ */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading-counter {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: var(--accent-lime);
+}
+
+.loading-name {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 8vw, 6rem);
+  color: #F5F5F5;
+  overflow: hidden;
+}
+
+.loading-name span {
+  display: inline-block;
+}
+
+/* ═══════════════════════════════════════════════════
+   CUSTOM CURSOR
+   ═══════════════════════════════════════════════════ */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-lime);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.custom-cursor.expanded {
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: 2px solid var(--accent-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-lime);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION STYLES
+   ═══════════════════════════════════════════════════ */
+.section-dark {
+  background-color: #0A0A0A;
+  color: #F5F5F5;
+}
+
+.section-light {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO CURVED TEXT
+   ═══════════════════════════════════════════════════ */
+.hero-curved-text {
+  width: 100%;
+  overflow: visible;
+}
+
+.hero-curved-text text {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 120px;
+  fill: #0A0A0A;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .hero-curved-text text {
+    font-size: 60px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   PILL CARD
+   ═══════════════════════════════════════════════════ */
+.pill-card {
+  border-radius: 9999px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pill-card:hover {
+  border-color: var(--accent-lime);
+  transform: scaleY(1.02);
+}
+
+/* ═══════════════════════════════════════════════════
+   AWARDS ROW
+   ═══════════════════════════════════════════════════ */
+.award-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.award-row:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════
+   FORM STYLES
+   ═══════════════════════════════════════════════════ */
+.form-input {
+  width: 100%;
+  padding: 1.25rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #F5F5F5;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent-lime);
+}
+
+.form-input::placeholder {
+  color: var(--gray-muted);
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-lime);
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════════════
+   MARQUEE / ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════ */
+.clip-reveal {
+  clip-path: inset(0 0 100% 0);
+}
+
+.clip-reveal.visible {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.magnetic-area {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent-lime);
+  color: #0A0A0A;
+}
