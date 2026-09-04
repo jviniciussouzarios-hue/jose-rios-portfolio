@@ -31,6 +31,14 @@ export default function About() {
                   src={content.personalInfo.profileImage}
                   alt={content.personalInfo.fullName}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  onError={(e) => {
+                    if (!e.currentTarget.dataset.retried) {
+                      e.currentTarget.dataset.retried = 'true';
+                      e.currentTarget.src = e.currentTarget.src.endsWith('.png')
+                        ? e.currentTarget.src.replace('.png', '.jpg')
+                        : e.currentTarget.src.replace('.jpg', '.png');
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                 

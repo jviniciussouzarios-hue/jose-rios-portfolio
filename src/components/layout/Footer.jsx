@@ -47,6 +47,14 @@ export default function Footer() {
                 alt={content.personalInfo.fullName}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.retried) {
+                    e.currentTarget.dataset.retried = 'true';
+                    e.currentTarget.src = e.currentTarget.src.endsWith('.png')
+                      ? e.currentTarget.src.replace('.png', '.jpg')
+                      : e.currentTarget.src.replace('.jpg', '.png');
+                  }
+                }}
               />
             </div>
             <div>

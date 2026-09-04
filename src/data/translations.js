@@ -21,7 +21,7 @@ export const translations = {
       location: "São Paulo, Brasil",
       linkedin: "https://linkedin.com/in/jviniciusrios",
       github: "https://github.com/jviniciussouzarios-hue",
-      profileImage: "assets/img/jose_rios_profile.jpg",
+      profileImage: "assets/img/jose_rios_profile.png",
       cvFile: "assets/files/Jose_Rios_CV.pdf",
     },
     nav: {
@@ -257,7 +257,7 @@ export const translations = {
       location: "São Paulo, Brazil",
       linkedin: "https://linkedin.com/in/jviniciusrios",
       github: "https://github.com/jviniciussouzarios-hue",
-      profileImage: "assets/img/jose_rios_profile.jpg",
+      profileImage: "assets/img/jose_rios_profile.png",
       cvFile: "assets/files/Jose_Rios_CV.pdf",
     },
     nav: {

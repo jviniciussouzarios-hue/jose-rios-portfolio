@@ -57,6 +57,14 @@ export default function Contact() {
                   src={personal.profileImage}
                   alt={personal.fullName}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    if (!e.currentTarget.dataset.retried) {
+                      e.currentTarget.dataset.retried = 'true';
+                      e.currentTarget.src = e.currentTarget.src.endsWith('.png')
+                        ? e.currentTarget.src.replace('.png', '.jpg')
+                        : e.currentTarget.src.replace('.jpg', '.png');
+                    }
+                  }}
                 />
               </div>
 
