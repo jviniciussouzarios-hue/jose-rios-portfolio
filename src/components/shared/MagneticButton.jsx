@@ -29,8 +29,22 @@ export default function MagneticButton({
     setPosition({ x: 0, y: 0 });
   };
 
+  const isInternalAnchor = href && href.startsWith('#');
+  const resolvedTarget = target !== undefined ? target : (isInternalAnchor || download ? undefined : '_blank');
+  const resolvedRel = rel !== undefined ? rel : (resolvedTarget === '_blank' ? 'noopener noreferrer' : undefined);
+
   const Tag = href ? 'a' : 'button';
-  const extraProps = href ? { href, download, target: download ? undefined : '_blank', rel: 'noopener noreferrer' } : { onClick };
+  const elementProps = href
+    ? {
+        href,
+        download,
+        target: resolvedTarget,
+        rel: resolvedRel,
+        onClick,
+      }
+    : {
+        onClick,
+      };
 
   return (
     <motion.div
@@ -43,7 +57,7 @@ export default function MagneticButton({
     >
       <Tag
         className={`inline-flex items-center justify-center font-body font-semibold uppercase tracking-wider text-sm transition-all duration-300 ${className}`}
-        {...extraProps}
+        {...elementProps}
       >
         {children}
       </Tag>
