@@ -10,6 +10,8 @@ export default function MagneticButton({
   onClick,
   href,
   download,
+  target,
+  rel,
   strength = 0.3,
 }) {
   const ref = useRef(null);
