@@ -114,27 +114,19 @@ export default function Hero() {
             </MagneticButton>
           </motion.div>
 
-          {/* Right: Key Stats */}
+          {/* Right: Key Stat */}
           <motion.div
-            className="md:col-span-3 flex flex-col md:items-end gap-6"
+            className="md:col-span-3 flex flex-col md:items-end justify-center"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div>
-              <span className="font-display text-4xl md:text-5xl lg:text-6xl text-bg-dark leading-none block">
-                {content.hero.stats[0].value}
+            <div className="md:text-right">
+              <span className="font-display text-5xl md:text-6xl lg:text-7xl text-bg-dark leading-none block">
+                {content.hero.stats[0]?.value}
               </span>
-              <p className="text-[11px] md:text-xs text-gray-muted uppercase tracking-wider font-semibold mt-1">
-                {content.hero.stats[0].label}
-              </p>
-            </div>
-            <div className="pt-2 border-t border-black/10 w-full md:w-auto md:text-right">
-              <span className="font-display text-2xl md:text-3xl text-bg-dark block">
-                {content.hero.stats[1].value}
-              </span>
-              <p className="text-[11px] md:text-xs text-gray-muted uppercase tracking-wider font-semibold mt-1">
-                {content.hero.stats[1].label}
+              <p className="text-xs md:text-sm text-gray-muted uppercase tracking-wider font-bold mt-2">
+                {content.hero.stats[0]?.label}
               </p>
             </div>
           </motion.div>

@@ -14,7 +14,6 @@ import Services from './components/sections/Services';
 import Works from './components/sections/Works';
 import Awards from './components/sections/Awards';
 import ClientLogos from './components/sections/ClientLogos';
-import Testimonials from './components/sections/Testimonials';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 
@@ -53,7 +52,6 @@ export default function App() {
                 <Works />
                 <Awards />
                 <ClientLogos />
-                <Testimonials />
                 <Contact />
               </main>
               <Footer />
