@@ -183,15 +183,6 @@ export const translations = {
         },
         {
           id: "05",
-          title: "Control Tower Pallet",
-          category: "Gestão logística",
-          tags: ["PHP","SQL","JWT"],
-          details: "Aplicação de controle logístico de pallets, com trabalho de evolução da autenticação e da integração entre aplicação e banco de dados.",
-          thumbnail: projectIllustration("pallet"),
-          link: "#",
-        },
-        {
-          id: "06",
           title: "MBFimDeJornada",
           category: "Automação operacional",
           tags: ["OPENWA","EXCEL","API"],
@@ -200,17 +191,7 @@ export const translations = {
           link: "#",
         },
         {
-          id: "07",
-          title: "Dashboard Operacional de Frotas & Transporte (CDNE)",
-          category: "Data & BI",
-          tags: ["POWER BI", "SNOWFLAKE", "LOGÍSTICA"],
-          details:
-            "Plataforma analítica em tempo real de rastreamento de status de frotas e indicadores operacionais para múltiplos centros de distribuição regionais, aumentando a pontualidade operacional.",
-          thumbnail: "assets/img/work_cdne_dashboard.jpg",
-          link: "#",
-        },
-        {
-          id: "08",
+          id: "06",
           title: "Migração & Infraestrutura de Servidores",
           category: "DevOps & Cloud",
           tags: ["BACKEND", "LINUX", "APACHE / PHP"],
@@ -467,15 +448,6 @@ export const translations = {
         },
         {
           id: "05",
-          title: "Control Tower Pallet",
-          category: "Logistics management",
-          tags: ["PHP","SQL","JWT"],
-          details: "Pallet logistics management application with ongoing improvements to authentication and application/database integration.",
-          thumbnail: projectIllustration("pallet"),
-          link: "#",
-        },
-        {
-          id: "06",
           title: "MBFimDeJornada",
           category: "Operational automation",
           tags: ["OPENWA","EXCEL","API"],
@@ -484,17 +456,7 @@ export const translations = {
           link: "#",
         },
         {
-          id: "07",
-          title: "Fleet Operational Command Center (CDNE)",
-          category: "Data & BI",
-          tags: ["POWER BI", "SNOWFLAKE", "LOGISTICS"],
-          details:
-            "Real-time fleet tracking and distribution analytics platform across multiple regional hubs, significantly accelerating fleet turnaround times.",
-          thumbnail: "assets/img/work_cdne_dashboard.jpg",
-          link: "#",
-        },
-        {
-          id: "08",
+          id: "06",
           title: "Server Migration & Infrastructure DevOps",
           category: "DevOps & Cloud",
           tags: ["BACKEND", "LINUX", "APACHE / PHP"],
