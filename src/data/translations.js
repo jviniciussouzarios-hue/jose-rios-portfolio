@@ -21,6 +21,12 @@ function projectIllustration(kind) {
   } else if(kind==='flow'){
     for(let i=0;i<3;i++){art+=rect(120,90+i*78,170,58);art+=line(140,110+i*78,100);art+=line(140,124+i*78,65);}
     art+='<path d="M290 120 L390 205 M290 198 L390 205 M290 276 L390 205" stroke="'+ink+'" stroke-width="3"/><circle cx="430" cy="205" r="58" fill="'+lime+'"/><path d="M405 205h50m-25-25v50" stroke="#142238" stroke-width="5"/>';
+   } else if(kind==='bi'){
+    for(let i=0;i<4;i++){art+=rect(110+i*120,85,108,55);art+=line(120+i*120,98,55);art+=rect(120+i*120,113,35+i*10,13,lime,3);}
+    art+=rect(110,155,270,165);art+=rect(395,155,195,165);
+    for(let i=0;i<7;i++)art+=rect(125+i*35,300-[40,85,65,110,90,130,115][i],24,[40,85,65,110,90,130,115][i],i%3===0?lime:ink,3);
+    art+='<circle cx="490" cy="225" r="45" fill="none" stroke="#101b30" stroke-width="15"/><circle cx="490" cy="225" r="45" fill="none" stroke="'+lime+'" stroke-width="15" stroke-dasharray="190 283" transform="rotate(-90 490 225)"/>';
+    art+=line(430,292,120);
   } else if(kind==='pallet'){
     for(let i=0;i<3;i++)for(let j=0;j<3;j++){art+=rect(145+j*125,85+i*75,105,62,(i+j)%3===0?lime:blue);art+=rect(151+j*125,140+i*75,93,5,ink,2);}
   } else {
@@ -198,6 +204,15 @@ export const translations = {
           details:
             "Modernização estrutural completa de servidores de produção, migração de bases relacionais sem downtime e automação de rotinas de backup criptografado.",
           thumbnail: "assets/img/work_server_migration.jpg",
+          link: "#",
+        },
+        {
+          id: "07",
+          title: "Business Intelligence & Visual Analytics",
+          category: "Visualização de dados",
+          tags: ["POWER BI","DAX","HTML","CSS","SVG","SQL"],
+          details: "Dashboards personalizados em Power BI para TVs operacionais e Ponto Focal, combinando gráficos dinâmicos em HTML, indicadores animados e apresentação visual de KPIs.",
+          thumbnail: projectIllustration("bi"),
           link: "#",
         },
       ],
@@ -463,6 +478,15 @@ export const translations = {
           details:
             "Complete modernization of mission-critical production servers, zero-downtime database migration, and automated encrypted backup routines.",
           thumbnail: "assets/img/work_server_migration.jpg",
+          link: "#",
+        },
+        {
+          id: "07",
+          title: "Business Intelligence & Visual Analytics",
+          category: "Data visualization",
+          tags: ["POWER BI","DAX","HTML","CSS","SVG","SQL"],
+          details: "Custom Power BI dashboards for operational TVs and focal-point monitoring, combining dynamic HTML visuals, animated indicators and clear KPI presentation.",
+          thumbnail: projectIllustration("bi"),
           link: "#",
         },
       ],
