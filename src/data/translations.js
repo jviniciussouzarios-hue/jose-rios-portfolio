@@ -3,6 +3,33 @@
    Português (PT-BR) & English (EN)
    ═══════════════════════════════════════════════ */
 
+
+// Original conceptual illustrations; no internal screenshots or operational data.
+function projectIllustration(kind) {
+  const ink = '#a8b8cf', lime = '#d6ff3f', blue = '#263c61';
+  const rect = (x,y,w,h,fill=blue,rx=7) => '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+rx+'" fill="'+fill+'"/>';
+  const line = (x,y,w) => rect(x,y,w,5,ink,2);
+  let art = '';
+  if (kind === 'schedule') {
+    for(let i=0;i<6;i++){art+=line(120,100+i*39,65); for(let j=0;j<8;j++)art+=rect(210+j*46,89+i*39,40,28,(i+j)%5===0?lime:blue,4);}
+  } else if(kind==='tower'){
+    art+= '<path d="M135 275 L210 155 L300 230 L405 115 L515 245" fill="none" stroke="'+lime+'" stroke-width="5" stroke-dasharray="9 7"/>';
+    for(const [x,y] of [[135,275],[210,155],[300,230],[405,115],[515,245]])art+='<circle cx="'+x+'" cy="'+y+'" r="11" fill="'+lime+'"/>';
+    art+=rect(120,315,440,25);
+  } else if(kind==='freight'){
+    for(let i=0;i<6;i++)art+=rect(135+i*70,310-[85,130,105,190,155,215][i],43,[85,130,105,190,155,215][i],i===5?lime:blue);
+  } else if(kind==='flow'){
+    for(let i=0;i<3;i++){art+=rect(120,90+i*78,170,58);art+=line(140,110+i*78,100);art+=line(140,124+i*78,65);}
+    art+='<path d="M290 120 L390 205 M290 198 L390 205 M290 276 L390 205" stroke="'+ink+'" stroke-width="3"/><circle cx="430" cy="205" r="58" fill="'+lime+'"/><path d="M405 205h50m-25-25v50" stroke="#142238" stroke-width="5"/>';
+  } else if(kind==='pallet'){
+    for(let i=0;i<3;i++)for(let j=0;j<3;j++){art+=rect(145+j*125,85+i*75,105,62,(i+j)%3===0?lime:blue);art+=rect(151+j*125,140+i*75,93,5,ink,2);}
+  } else {
+    for(let i=0;i<4;i++){art+=rect(130+(i%2)*100,85+i*60,280,45,i%2?blue:lime,12);art+=rect(150+(i%2)*100,103+i*60,170,5,i%2?ink:'#263c61',2);}
+  }
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400"><rect width="640" height="400" fill="#101b30"/>'+rect(30,25,580,350,'#182945',15)+rect(48,43,544,24,'#263c61')+rect(48,82,45,270,'#101b30')+art+'<text x="320" y="365" text-anchor="middle" font-family="sans-serif" font-size="10" letter-spacing="2" fill="#a8b8cf">CONCEPT ILLUSTRATION</text></svg>';
+  return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+}
+
 export const translations = {
   pt: {
     meta: {
@@ -76,6 +103,10 @@ export const translations = {
         "Google Cloud & Gen AI",
         "Logística & Transporte (Martin Brower)",
         "Git & CI/CD",
+        "React & Vite",
+        "TDD & Arquitetura de Software",
+        "Integração de APIs & Automação",
+        "RAG & Engenharia de Conhecimento",
       ],
     },
     services: {
@@ -116,6 +147,60 @@ export const translations = {
       items: [
         {
           id: "01",
+          title: "MBEscala",
+          category: "Planejamento logístico",
+          tags: ["PHP","MYSQL","JAVASCRIPT","TDD"],
+          details: "Cockpit multi-CD para planejamento de escalas, alocação de motoristas e veículos, gestão de folgas e validação de jornadas. Integra regras operacionais, auditoria e testes automatizados.",
+          thumbnail: projectIllustration("schedule"),
+          link: "#",
+        },
+        {
+          id: "02",
+          title: "MBControlTower 2.0",
+          category: "Engenharia de dados",
+          tags: ["REACT","PHP","MYSQL","POWER BI","SNOWFLAKE"],
+          details: "Plataforma em desenvolvimento que transforma painéis de transporte em um sistema operacional web, centralizando informações de rotas, entregas e alertas. Integração com Snowflake prevista na evolução do projeto.",
+          thumbnail: projectIllustration("tower"),
+          link: "#",
+        },
+        {
+          id: "03",
+          title: "MBFreteSpot",
+          category: "Modernização de sistemas",
+          tags: ["PHP","MYSQL","JAVASCRIPT","CSRF"],
+          details: "Modernização de uma aplicação legada de fretes extras, com gestão de registros, ocorrências, permissões e indicadores de custos e receitas. Evolução em andamento com foco em segurança e paridade funcional.",
+          thumbnail: projectIllustration("freight"),
+          link: "#",
+        },
+        {
+          id: "04",
+          title: "MB Flow",
+          category: "Inteligência artificial",
+          tags: ["PHP","MYSQL","RAG","LLM"],
+          details: "Plataforma em desenvolvimento para centralizar conhecimento operacional e documentos. Arquitetura preparada para consultas assistidas por IA, com modelos locais e recuperação de informações como objetivos de evolução.",
+          thumbnail: projectIllustration("flow"),
+          link: "#",
+        },
+        {
+          id: "05",
+          title: "Control Tower Pallet",
+          category: "Gestão logística",
+          tags: ["PHP","SQL","JWT"],
+          details: "Aplicação de controle logístico de pallets, com trabalho de evolução da autenticação e da integração entre aplicação e banco de dados.",
+          thumbnail: projectIllustration("pallet"),
+          link: "#",
+        },
+        {
+          id: "06",
+          title: "MBFimDeJornada",
+          category: "Automação operacional",
+          tags: ["OPENWA","EXCEL","API"],
+          details: "Automação de notificações operacionais via WhatsApp a partir de planilhas, com filtros de elegibilidade e controle de reenvios. Integração validada em teste de envio.",
+          thumbnail: projectIllustration("message"),
+          link: "#",
+        },
+        {
+          id: "07",
           title: "Dashboard Operacional de Frotas & Transporte (CDNE)",
           category: "Data & BI",
           tags: ["POWER BI", "SNOWFLAKE", "LOGÍSTICA"],
@@ -125,23 +210,13 @@ export const translations = {
           link: "#",
         },
         {
-          id: "02",
+          id: "08",
           title: "Migração & Infraestrutura de Servidores",
           category: "DevOps & Cloud",
           tags: ["BACKEND", "LINUX", "APACHE / PHP"],
           details:
             "Modernização estrutural completa de servidores de produção, migração de bases relacionais sem downtime e automação de rotinas de backup criptografado.",
           thumbnail: "assets/img/work_server_migration.jpg",
-          link: "#",
-        },
-        {
-          id: "03",
-          title: "Painel de Escalas & Gestão Operacional",
-          category: "Web Application",
-          tags: ["PHP MODULAR", "JAVASCRIPT ES6", "MYSQL"],
-          details:
-            "Sistema inteligente de alocação de equipes e rotas de transporte com validações em tempo real, relatórios gerenciais e controle fino de permissões.",
-          thumbnail: "assets/img/service_web_dev.jpg",
           link: "#",
         },
       ],
@@ -312,6 +387,10 @@ export const translations = {
         "Google Cloud & Gen AI",
         "Logistics & Transport (Martin Brower)",
         "Git & CI/CD",
+        "React & Vite",
+        "TDD & Software Architecture",
+        "API Integration & Automation",
+        "RAG & Knowledge Engineering",
       ],
     },
     services: {
@@ -352,6 +431,60 @@ export const translations = {
       items: [
         {
           id: "01",
+          title: "MBEscala",
+          category: "Logistics planning",
+          tags: ["PHP","MYSQL","JAVASCRIPT","TDD"],
+          details: "Multi-site scheduling cockpit for driver and vehicle allocation, rest periods and working-hour validation, combining business rules, auditing and automated tests.",
+          thumbnail: projectIllustration("schedule"),
+          link: "#",
+        },
+        {
+          id: "02",
+          title: "MBControlTower 2.0",
+          category: "Data engineering",
+          tags: ["REACT","PHP","MYSQL","POWER BI","SNOWFLAKE"],
+          details: "Web platform under development that turns transportation dashboards into an operational system for routes, deliveries and alerts. Snowflake integration is planned as the project evolves.",
+          thumbnail: projectIllustration("tower"),
+          link: "#",
+        },
+        {
+          id: "03",
+          title: "MBFreteSpot",
+          category: "Legacy modernization",
+          tags: ["PHP","MYSQL","JAVASCRIPT","CSRF"],
+          details: "Ongoing modernization of a legacy spot freight application, covering records, incidents, permissions, cost and revenue indicators, with emphasis on security and functional parity.",
+          thumbnail: projectIllustration("freight"),
+          link: "#",
+        },
+        {
+          id: "04",
+          title: "MB Flow",
+          category: "Artificial intelligence",
+          tags: ["PHP","MYSQL","RAG","LLM"],
+          details: "Knowledge platform under development for operational documents, designed toward AI-assisted queries, local language models and retrieval-augmented generation.",
+          thumbnail: projectIllustration("flow"),
+          link: "#",
+        },
+        {
+          id: "05",
+          title: "Control Tower Pallet",
+          category: "Logistics management",
+          tags: ["PHP","SQL","JWT"],
+          details: "Pallet logistics management application with ongoing improvements to authentication and application/database integration.",
+          thumbnail: projectIllustration("pallet"),
+          link: "#",
+        },
+        {
+          id: "06",
+          title: "MBFimDeJornada",
+          category: "Operational automation",
+          tags: ["OPENWA","EXCEL","API"],
+          details: "WhatsApp operational notification automation using spreadsheets, eligibility filters and duplicate-send controls. Messaging integration validated in a send test.",
+          thumbnail: projectIllustration("message"),
+          link: "#",
+        },
+        {
+          id: "07",
           title: "Fleet Operational Command Center (CDNE)",
           category: "Data & BI",
           tags: ["POWER BI", "SNOWFLAKE", "LOGISTICS"],
@@ -361,23 +494,13 @@ export const translations = {
           link: "#",
         },
         {
-          id: "02",
+          id: "08",
           title: "Server Migration & Infrastructure DevOps",
           category: "DevOps & Cloud",
           tags: ["BACKEND", "LINUX", "APACHE / PHP"],
           details:
             "Complete modernization of mission-critical production servers, zero-downtime database migration, and automated encrypted backup routines.",
           thumbnail: "assets/img/work_server_migration.jpg",
-          link: "#",
-        },
-        {
-          id: "03",
-          title: "Operational Schedule & Resource Management",
-          category: "Web Application",
-          tags: ["MODULAR PHP", "JAVASCRIPT ES6", "MYSQL"],
-          details:
-            "Intelligent team and route scheduling portal featuring real-time business constraint checks, executive reporting, and granular role management.",
-          thumbnail: "assets/img/service_web_dev.jpg",
           link: "#",
         },
       ],
