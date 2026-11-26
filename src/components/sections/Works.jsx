@@ -39,10 +39,10 @@ const caseStudies = {
   },
   "02": {
     "pt": [
-      "Informações de transporte distribuídas em diferentes fontes dificultam a visão operacional unificada.",
-      "Evolução de dashboards de BI para uma aplicação web com visão de rotas, entregas, ocorrências e alertas, incluindo filtros operacionais.",
-      "Frontend React/Vite, backend PHP e MySQL. Modelagem de relacionamentos entre fontes por identificadores de embarque, importação inicial de planilhas e integração Snowflake planejada. Sessões e proteção CSRF fazem parte da base técnica.",
-      "Centralizar consultas e apoiar decisões operacionais sem depender exclusivamente de relatórios estáticos.",
+      "Informações distribuídas em diferentes fontes e etapas de consulta aumentavam o tempo necessário para analisar a operação.",
+      "Aprimoramento visual dos dashboards, reorganização de KPIs, filtros e alertas, com evolução da camada de dados para facilitar a identificação de desvios e reduzir o tempo de análise. A próxima etapa amplia essas capacidades em uma aplicação web.",
+      "Power BI, DAX e SQL na camada analítica, com Snowflake como fonte de dados e revisão de relacionamentos e consultas. A evolução web utiliza React/Vite, PHP e MySQL, com integração direta ao Snowflake planejada, sessões e proteção CSRF.",
+      "Redução do tempo de análise operacional, maior clareza visual e acesso mais ágil aos indicadores. Percentuais e tempos internos não são divulgados.",
       [
         "Fontes de dados",
         "Normalização e API",
@@ -50,10 +50,10 @@ const caseStudies = {
       ]
     ],
     "en": [
-      "Transportation information spread across sources makes a unified operational view difficult.",
-      "Evolution from BI dashboards to a web application for routes, deliveries, incidents and alerts, including operational filters.",
-      "React/Vite frontend, PHP backend and MySQL. Shipment identifiers connect data sources; initial spreadsheet imports and planned Snowflake integration. Sessions and CSRF protection are part of the technical foundation.",
-      "Centralize queries and support operational decisions beyond static reports.",
+      "Information spread across sources and multiple query steps increased the time needed to analyze operations.",
+      "Visual dashboard enhancements, reorganized KPIs, filters and alerts, and improvements to the data layer to identify deviations and reduce analysis time. The next stage extends these capabilities into a web application.",
+      "Power BI, DAX and SQL in the analytics layer, with Snowflake as a data source and improvements to relationships and queries. The web evolution uses React/Vite, PHP and MySQL, with planned direct Snowflake integration, sessions and CSRF protection.",
+      "Reduced operational analysis time, clearer visuals and faster access to indicators. Internal timings and percentages are not disclosed.",
       [
         "Data sources",
         "Normalization and API",
